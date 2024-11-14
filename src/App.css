@@ -1,38 +1,272 @@
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f9;
+  overflow: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navigation */
+.main-nav {
+  background: #ffffffcc;
+  padding: 1.2rem 3rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: #333;
+  margin: 0 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff6363;
+}
+
+.cta-button {
+  background-color: #ff6363;
+  color: #fff;
+  padding: 0.6rem 1.8rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e05555;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.primary-cta {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2.5rem;
+  background-color: #ff6363;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(255, 99, 99, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.primary-cta:hover {
+  transform: translateY(-2px);
+  background-color: #e05555;
+}
+
+/* Welcome Section */
+.welcome-section {
+  padding: 4rem 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.welcome-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #444;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.welcome-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Love Stories Section */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+}
+
+.story-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.story-content {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.story-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.couple-name {
+  font-weight: bold;
+  color: #444;
+  margin-top: 1rem;
+}
+
+.wedding-date {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Moments Section */
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+}
+
+.moment-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.moment-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.moment-card:hover img {
+  transform: scale(1.05);
+}
+
+.moment-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: left;
+}
+
+/* Contact CTA */
+.contact-cta {
+  background: #ff6363;
+  color: #fff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.contact-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.secondary-cta {
+  background-color: #fff;
+  color: #ff6363;
+  padding: 0.8rem 2.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(255, 99, 99, 0.4);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.secondary-cta:hover {
+  background-color: #ffe5e5;
+  transform: translateY(-2px);
 }
